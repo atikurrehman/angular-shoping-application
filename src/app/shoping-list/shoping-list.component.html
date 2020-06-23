@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-sx-10">
+        <app-shoping-edit></app-shoping-edit>
+        <hr>
+        <ul class="list-group">
+            <!-- here we are using asnc pipe for getting date from suscribtion -->
+            <a class="list-group-item" style="cursor:pointer;"
+                *ngFor="let ingredient of (ingredients| async).ingredients;let i=index" (click)="onEditItem(i)">
+                {{ingredient.name}}({{ingredient.amount}})</a>
+        </ul>
+    </div>
+</div>
